@@ -1,0 +1,715 @@
+/* ==========================================
+   AlgoViz - Main Styling
+   ========================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    font-family: Arial, sans-serif;
+
+    color: #e5e7eb;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(37, 99, 235, 0.18),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            rgba(124, 58, 237, 0.15),
+            transparent 30%
+        ),
+        #020617;
+}
+
+
+/* ==========================================
+   HEADER
+   ========================================== */
+
+header {
+    width: 94%;
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 28px 0;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+
+    font-size: 32px;
+
+    color: #f8fafc;
+}
+
+header p {
+    margin: 5px 0 0;
+
+    color: #94a3b8;
+}
+
+.status {
+    padding: 8px 14px;
+
+    border: 1px solid #334155;
+
+    border-radius: 20px;
+
+    color: #93c5fd;
+
+    background: #0f172a;
+
+    font-size: 13px;
+}
+
+
+/* ==========================================
+   MAIN LAYOUT
+   ========================================== */
+
+main {
+    width: 94%;
+    max-width: 1200px;
+
+    margin: 10px auto 50px;
+
+    display: grid;
+
+    grid-template-columns: 360px 1fr;
+
+    gap: 20px;
+}
+
+
+/* ==========================================
+   PANELS
+   ========================================== */
+
+.control-panel,
+.visual-panel {
+
+    background: rgba(15, 23, 42, 0.9);
+
+    border: 1px solid #1e293b;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.control-panel {
+
+    padding: 24px;
+}
+
+.visual-panel {
+
+    padding: 22px;
+}
+
+
+/* ==========================================
+   HEADINGS
+   ========================================== */
+
+h2 {
+    margin-top: 0;
+
+    color: #f8fafc;
+
+    font-size: 21px;
+}
+
+.visual-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    gap: 15px;
+}
+
+.visual-header p {
+
+    margin-top: 6px;
+
+    color: #94a3b8;
+}
+
+
+/* ==========================================
+   INPUT SECTIONS
+   ========================================== */
+
+.input-section {
+
+    margin-top: 22px;
+}
+
+.input-section label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #cbd5e1;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+
+/* ==========================================
+   INPUTS
+   ========================================== */
+
+input,
+select {
+
+    width: 100%;
+
+    padding: 11px 12px;
+
+    border-radius: 9px;
+
+    border: 1px solid #334155;
+
+    outline: none;
+
+    background: #020617;
+
+    color: #e2e8f0;
+
+    font-size: 14px;
+}
+
+input:focus,
+select:focus {
+
+    border-color: #3b82f6;
+
+    box-shadow:
+        0 0 0 2px rgba(59, 130, 246, 0.15);
+}
+
+
+/* ==========================================
+   INPUT ROW
+   ========================================== */
+
+.input-row {
+
+    display: flex;
+
+    gap: 8px;
+}
+
+.input-row input {
+
+    flex: 1;
+}
+
+
+/* ==========================================
+   THREE INPUTS
+   ========================================== */
+
+.three-inputs {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr 0.8fr;
+
+    gap: 7px;
+}
+
+
+/* ==========================================
+   BUTTONS
+   ========================================== */
+
+button {
+
+    border: none;
+
+    border-radius: 9px;
+
+    padding: 11px 14px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    color: white;
+
+    transition: 0.2s;
+}
+
+button:hover:not(:disabled) {
+
+    transform: translateY(-1px);
+}
+
+button:disabled {
+
+    opacity: 0.4;
+
+    cursor: not-allowed;
+}
+
+
+/* Add node */
+
+#addNodeBtn {
+
+    background: #2563eb;
+
+    white-space: nowrap;
+}
+
+
+/* Add edge */
+
+.full-button {
+
+    width: 100%;
+
+    margin-top: 9px;
+
+    background: #475569;
+}
+
+
+/* Main run button */
+
+.run-button {
+
+    flex: 1;
+
+    background: #2563eb;
+
+    font-size: 15px;
+}
+
+.run-button:hover {
+
+    background: #1d4ed8;
+}
+
+
+/* Clear button */
+
+.clear-button {
+
+    background: #7f1d1d;
+}
+
+
+/* ==========================================
+   BUTTON GROUP
+   ========================================== */
+
+.button-group {
+
+    display: flex;
+
+    gap: 9px;
+
+    margin-top: 24px;
+}
+
+
+/* ==========================================
+   EDGE LIST
+   ========================================== */
+
+.edge-list {
+
+    max-height: 150px;
+
+    overflow-y: auto;
+
+    border: 1px solid #1e293b;
+
+    border-radius: 9px;
+
+    background: #020617;
+
+    padding: 7px;
+}
+
+.edge-item {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 9px;
+
+    margin-bottom: 5px;
+
+    border-radius: 7px;
+
+    background: #0f172a;
+
+    color: #cbd5e1;
+
+    font-size: 12px;
+}
+
+.edge-item:last-child {
+
+    margin-bottom: 0;
+}
+
+.edge-item strong {
+
+    color: #60a5fa;
+}
+
+
+/* ==========================================
+   MESSAGE
+   ========================================== */
+
+#message {
+
+    min-height: 22px;
+
+    margin-top: 12px;
+
+    font-size: 13px;
+}
+
+.message.success {
+
+    color: #86efac;
+}
+
+.message.error {
+
+    color: #fca5a5;
+}
+
+
+/* ==========================================
+   DISTANCE BADGE
+   ========================================== */
+
+#distanceBadge {
+
+    padding: 8px 12px;
+
+    border-radius: 20px;
+
+    border: 1px solid #334155;
+
+    background: #020617;
+
+    color: #93c5fd;
+
+    white-space: nowrap;
+
+    font-size: 12px;
+}
+
+
+/* ==========================================
+   GRAPH AREA
+   ========================================== */
+
+.graph-container {
+
+    margin-top: 16px;
+
+    overflow: hidden;
+
+    border-radius: 14px;
+
+    border: 1px solid #1e293b;
+
+    background: #020617;
+}
+
+#graphSvg {
+
+    display: block;
+
+    width: 100%;
+
+    min-height: 440px;
+}
+
+
+/* ==========================================
+   GRAPH EDGES
+   ========================================== */
+
+.edge {
+
+    stroke: #475569;
+
+    stroke-width: 3;
+
+    transition: 0.3s;
+}
+
+.edge.active {
+
+    stroke: #f59e0b;
+
+    stroke-width: 6;
+}
+
+
+/* ==========================================
+   EDGE WEIGHTS
+   ========================================== */
+
+.weight {
+
+    fill: #cbd5e1;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    text-anchor: middle;
+}
+
+
+/* ==========================================
+   GRAPH NODES
+   ========================================== */
+
+.node circle {
+
+    fill: #0f172a;
+
+    stroke: #64748b;
+
+    stroke-width: 3;
+
+    transition: 0.3s;
+}
+
+.node text {
+
+    fill: #f8fafc;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    text-anchor: middle;
+
+    dominant-baseline: middle;
+
+    pointer-events: none;
+}
+
+
+/* Visited node */
+
+.node.visited circle {
+
+    fill: #172554;
+
+    stroke: #60a5fa;
+}
+
+
+/* Current node */
+
+.node.current circle {
+
+    fill: #451a03;
+
+    stroke: #f59e0b;
+
+    stroke-width: 5;
+}
+
+
+/* Start node */
+
+.node.start circle {
+
+    stroke: #a78bfa;
+
+    stroke-width: 4;
+}
+
+
+/* End node */
+
+.node.end circle {
+
+    stroke: #22c55e;
+
+    stroke-width: 4;
+}
+
+
+/* Distance underneath node */
+
+.node .distance {
+
+    fill: #94a3b8;
+
+    font-size: 11px;
+
+    font-weight: normal;
+}
+
+
+/* ==========================================
+   PLAYBACK CONTROLS
+   ========================================== */
+
+.playback {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 14px;
+}
+
+.playback button {
+
+    background: #334155;
+}
+
+.playback button:hover:not(:disabled) {
+
+    background: #475569;
+}
+
+#stepCount {
+
+    margin-left: auto;
+
+    color: #94a3b8;
+
+    font-size: 13px;
+}
+
+
+/* ==========================================
+   RESULTS
+   ========================================== */
+
+.results {
+
+    display: grid;
+
+    grid-template-columns:
+        1.5fr 1fr 1fr;
+
+    gap: 10px;
+
+    margin-top: 16px;
+}
+
+.results > div {
+
+    padding: 15px;
+
+    border: 1px solid #1e293b;
+
+    border-radius: 10px;
+
+    background: #0b1220;
+}
+
+.results span {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #94a3b8;
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.08em;
+}
+
+.results strong {
+
+    color: #f8fafc;
+
+    font-size: 16px;
+}
+
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+
+@media (max-width: 900px) {
+
+    main {
+
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    header {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 10px;
+    }
+
+    .three-inputs {
+
+        grid-template-columns: 1fr;
+    }
+
+    .button-group {
+
+        flex-direction: column;
+    }
+
+    .results {
+
+        grid-template-columns: 1fr;
+    }
+
+    #graphSvg {
+
+        min-height: 350px;
+    }
+
+}

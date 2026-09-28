@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AlgoViz - Dijkstra Visualizer</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <header>
+        <div>
+            <h1>AlgoViz</h1>
+            <p>Algorithm Visualization Engine</p>
+        </div>
+
+        <span class="status">Python + Flask</span>
+    </header>
+
+
+    <main>
+
+        <!-- LEFT SIDE -->
+        <section class="control-panel">
+
+            <h2>Build Your Graph</h2>
+
+            <!-- ADD NODE -->
+            <div class="input-section">
+
+                <label>Add Node</label>
+
+                <div class="input-row">
+                    <input
+                        type="text"
+                        id="nodeInput"
+                        placeholder="Example: A"
+                        maxlength="10"
+                    >
+
+                    <button id="addNodeBtn">
+                        Add Node
+                    </button>
+                </div>
+
+            </div>
+
+
+            <!-- ADD EDGE -->
+            <div class="input-section">
+
+                <label>Add Edge</label>
+
+                <div class="three-inputs">
+
+                    <select id="fromNode">
+                        <option value="">From</option>
+                    </select>
+
+                    <select id="toNode">
+                        <option value="">To</option>
+                    </select>
+
+                    <input
+                        type="number"
+                        id="weightInput"
+                        placeholder="Weight"
+                        min="0"
+                    >
+
+                </div>
+
+                <button id="addEdgeBtn" class="full-button">
+                    Add Edge
+                </button>
+
+            </div>
+
+
+            <!-- EDGES LIST -->
+            <div class="input-section">
+
+                <label>Current Edges</label>
+
+                <div id="edgeList" class="edge-list">
+                    No edges added yet.
+                </div>
+
+            </div>
+
+
+            <!-- START / END -->
+            <div class="input-section">
+
+                <label>Start Node</label>
+
+                <select id="startNode">
+                    <option value="">Select start node</option>
+                </select>
+
+
+                <label>End Node</label>
+
+                <select id="endNode">
+                    <option value="">Select end node</option>
+                </select>
+
+            </div>
+
+
+            <!-- ACTION BUTTONS -->
+            <div class="button-group">
+
+                <button id="runBtn" class="run-button">
+                    ▶ Run Dijkstra
+                </button>
+
+                <button id="clearBtn" class="clear-button">
+                    Clear Graph
+                </button>
+
+            </div>
+
+
+            <div id="message"></div>
+
+        </section>
+
+
+        <!-- RIGHT SIDE -->
+        <section class="visual-panel">
+
+            <div class="visual-header">
+
+                <div>
+                    <h2>Graph Visualization</h2>
+
+                    <p id="stepLabel">
+                        Add nodes and edges to create your graph.
+                    </p>
+                </div>
+
+                <div id="distanceBadge">
+                    Distance: —
+                </div>
+
+            </div>
+
+
+            <!-- GRAPH -->
+            <div class="graph-container">
+
+                <svg
+                    id="graphSvg"
+                    viewBox="0 0 800 500">
+                </svg>
+
+            </div>
+
+
+            <!-- CONTROLS -->
+            <div class="playback">
+
+                <button id="backBtn" disabled>
+                    ◀ Back
+                </button>
+
+                <button id="playBtn" disabled>
+                    ▶ Play
+                </button>
+
+                <button id="nextBtn" disabled>
+                    Next ▶
+                </button>
+
+                <span id="stepCount">
+                    Step 0 / 0
+                </span>
+
+            </div>
+
+
+            <!-- RESULTS -->
+            <div class="results">
+
+                <div>
+                    <span>Shortest Path</span>
+                    <strong id="pathResult">—</strong>
+                </div>
+
+                <div>
+                    <span>Distance</span>
+                    <strong id="distanceResult">—</strong>
+                </div>
+
+                <div>
+                    <span>Steps</span>
+                    <strong id="actualSteps">0</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+
+</body>
+
+</html>
